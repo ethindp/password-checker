@@ -1,0 +1,156 @@
+<h1>Password Checker</h1>
+
+<h2>Summary</h2>
+
+<p>The password checker add-on allows users to utilize password
+dictionaries and a password examination system to determine the strength
+and crack-ability of their password. It utilizes the list of passwords
+in the SecLists repository. Users are free to add new passwords if they
+so desire. The password checker add-on also allows users to generate
+highly secure passwords.</p>
+
+<h2>Usage</h2>
+
+<p>To use this add-on:</p>
+
+<ul>
+<li>ctrl+shift+NVDA+Z allows you to check the strength of a password. Do
+note that this unfortunately locks up NVDA for a period of time (I'm
+not sure how to fix this). estimated periods of time are around 2-4
+seconds, depending on the power of your computer and the amount of
+memory you have.</li>
+<li>ctrl+shift+NVDA+g allows you to generate a random password that
+satisfies the requirements of a strong password:
+<ul>
+<li>Has 12 Characters, Minimum: You need to choose a password that's
+long enough. There's no minimum password length everyone agrees
+on, but you should generally go for passwords that are a minimum
+of 12 to 14 characters in length. A longer password would be
+even better.</li>
+<li>Includes Numbers, Symbols, Capital Letters, and Lower-Case
+Letters: Use a mix of different types of characters to make the
+password harder to crack.</li>
+<li>Isn't a Dictionary Word or Combination of Dictionary Words: Stay
+away from obvious dictionary words and combinations of
+dictionary words. Any word on its own is bad. Any combination of
+a few words, especially if they're obvious, is also bad. For
+example, "house" is a terrible password. "Red house" is also
+very bad.</li>
+<li>Doesn't Rely on Obvious Substitutions: Don't use common
+substitutions, either - for example, "H0use" isn't strong just
+because you've replaced an o with a 0. That's just obvious. Try
+to mix it up - for example, "BigHouse$123" fits many of the
+requirements here. It's 12 characters and includes upper-case
+letters, lower-case letters, a symbol, and some numbers. But
+it's fairly obvious - it's a dictionary phrase where each word
+is capitalized properly. There's only a single symbol, all the
+numbers are at the end, and they're in an easy order to guess.</li>
+</ul></li>
+<li>By using the password checker menu in the tools menu, you can
+reload, extend and unload the password list.</li>
+</ul>
+
+<h2>Loading, unloading, and extending the password list</h2>
+
+<p>To load the password list:</p>
+
+<ul>
+<li>Go to 'NVDA Menu->Tools->Password Checker->Load password list...'.</li>
+</ul>
+
+<p>To extend the password list:</p>
+
+<ul>
+<li>First, create a text file; any text file ending in .txt will do.</li>
+<li>Add all your passwords, separated by newlines. An example of some of
+the PINs loaded by the default password list is given below. Each
+password is read as it is found; there is no priority or sorting
+method performed. Be careful how many passwords you add, though -
+adding too many to the list of all passwords you've got loaded can
+very easily cause you to run out of memory or cause an unacceptable
+delay in the password checking process.</li>
+<li>Once you've added all your passwords to the text file, open the
+'NVDA Menu->Tools->Password Checker->Extend password list...'
+dialog and select the file you want to load.</li>
+<li>And that's it! All your passwords are ready to go!</li>
+</ul>
+
+<p>To unload the password list:</p>
+
+<ul>
+<li>Go to 'NVDA Menu->Tools->Password Checker->Unload password
+list...'.</li>
+</ul>
+
+<h2>Example of a password file</h2>
+
+<p>1234</p>
+
+<p>1111</p>
+
+<p>0000</p>
+
+<p>1212</p>
+
+<p>7777</p>
+
+<p>Note: Don't use this list - it is already loaded by default!</p>
+
+<h2>Checking passwords</h2>
+
+<p>To check passwords, press ctrl+shift+NVDA+Z. This will open a dialog
+that will ask you for your password. Enter it and hit OK. The password
+system will check its password lists (called "password frequency lists")
+and also check your password against various password analysis
+algorithms. Your password will earn a score between 1 and 4, with 1
+being the worst and 4 being the best. Try to get a 4 all the time!</p>
+
+<p>The system will also do a direct comparison against the loaded password
+list and your password. If your password happens to be found in the
+loaded password list, the check is aborted immediately and you are
+notified and warned to change your password immediately. It is highly
+recommended that you follow this warning; using any of the passwords in
+the loaded password list is considered very dangerous and opens you up
+to password dictionary attacks. The lists this add-on comes with are
+definitely free and open to the public, including hackers, so it would
+not be hard for a hacker to get all these lists and crack your password
+relatively quickly if it happens to be one of the passwords in these
+lists.</p>
+
+<p>Once the password analysis process is completed, a password strength
+report will be generated and displayed as an HTML document. Read through
+it carefully; all the data within is very important, though that is up
+to debate when it comes to the termonology section (which is only there
+for informative reasons). The same could go for the password checking
+time, which is not necessarily accurate. The rest of the data - password
+times and feedback - are very important and pay very close attention to
+everything presented there.</p>
+
+<p>When reading the password times, the term "innumerable" may be presented
+to you. This indicates that the time to crack your password was so high
+that the system was unable to determine an appropriate time unit
+measurement without causing division errors (in other words, the time
+was so high that cracking it would be impossible on clasical machines
+and would only be breakable by quantum computing). If you see this for
+all four scenarios, good job!</p>
+
+<h3>Warning</h3>
+
+<p>Do not solely rely on this add-on as your 'security adviser'! It is not
+designed for this purpose, and is not designed to give you 100-percent
+perfect (or close to perfect) security advice! It is only designed to
+help you secure your passwords. Do not neglect your security because
+this add-on indicates your password is safe! Always employ alternative
+security methods, such as multi-factor authentication.</p>
+
+<h2>Generating secure passwords</h2>
+
+<p>This add-on has the unique capability to allow you to generate a safe,
+secure password that will pass all checks that this add-on gives. As an
+example, the generated password <code>9k(:H#,&gt;8q4M</code> earned a score of 4.
+(Another 2-character password, <code>m\</code>, naturally earned a score less than
+4.) To do so, press ctrl+shift+NVDA+G. This works even when no password
+list is loaded. A dialog will appear asking you to enter the length of
+the password you'd like to generate. So far as I can tell, no known
+limitation exists, and password generation times are very quick, even
+for a one-million character password.</p>
